@@ -30,7 +30,10 @@ struct MainView: View {
                 }
             }.navigationTitle(Text("DejkoCrypto"))
         }.task {
-            await cryptoListViewModel.downloadCryptosAsync(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
+            
+            await cryptoListViewModel.downloadCryptosCountinuation(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
+            
+            //await cryptoListViewModel.downloadCryptosAsync(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
         }
         
         /* .onAppear {
