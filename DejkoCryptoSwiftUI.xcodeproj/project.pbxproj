@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		71D329CC28FC249100E3774C /* DejkoCryptoSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D329CB28FC249100E3774C /* DejkoCryptoSwiftUIApp.swift */; };
-		71D329CE28FC249100E3774C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D329CD28FC249100E3774C /* ContentView.swift */; };
+		71D329CE28FC249100E3774C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D329CD28FC249100E3774C /* MainView.swift */; };
 		71D329D028FC249300E3774C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D329CF28FC249300E3774C /* Assets.xcassets */; };
 		71D329D328FC249300E3774C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D329D228FC249300E3774C /* Preview Assets.xcassets */; };
+		71D329DE28FC265600E3774C /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D329DD28FC265600E3774C /* CryptoModel.swift */; };
+		71D329E028FC27C000E3774C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D329DF28FC27C000E3774C /* WebService.swift */; };
+		71D329E228FC2AC000E3774C /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D329E128FC2AC000E3774C /* CryptoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71D329C828FC249100E3774C /* DejkoCryptoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DejkoCryptoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D329CB28FC249100E3774C /* DejkoCryptoSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DejkoCryptoSwiftUIApp.swift; sourceTree = "<group>"; };
-		71D329CD28FC249100E3774C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		71D329CD28FC249100E3774C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		71D329CF28FC249300E3774C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71D329D228FC249300E3774C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71D329DD28FC265600E3774C /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
+		71D329DF28FC27C000E3774C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		71D329E128FC2AC000E3774C /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,11 @@
 		71D329CA28FC249100E3774C /* DejkoCryptoSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				71D329DC28FC25DB00E3774C /* Service */,
+				71D329DB28FC25D200E3774C /* View Model */,
+				71D329DA28FC25CB00E3774C /* View */,
+				71D329D928FC25C500E3774C /* Model */,
 				71D329CB28FC249100E3774C /* DejkoCryptoSwiftUIApp.swift */,
-				71D329CD28FC249100E3774C /* ContentView.swift */,
 				71D329CF28FC249300E3774C /* Assets.xcassets */,
 				71D329D128FC249300E3774C /* Preview Content */,
 			);
@@ -65,6 +74,38 @@
 				71D329D228FC249300E3774C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71D329D928FC25C500E3774C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71D329DD28FC265600E3774C /* CryptoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71D329DA28FC25CB00E3774C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71D329CD28FC249100E3774C /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71D329DB28FC25D200E3774C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				71D329E128FC2AC000E3774C /* CryptoViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		71D329DC28FC25DB00E3774C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				71D329DF28FC27C000E3774C /* WebService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D329CE28FC249100E3774C /* ContentView.swift in Sources */,
+				71D329DE28FC265600E3774C /* CryptoModel.swift in Sources */,
+				71D329CE28FC249100E3774C /* MainView.swift in Sources */,
+				71D329E028FC27C000E3774C /* WebService.swift in Sources */,
 				71D329CC28FC249100E3774C /* DejkoCryptoSwiftUIApp.swift in Sources */,
+				71D329E228FC2AC000E3774C /* CryptoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
