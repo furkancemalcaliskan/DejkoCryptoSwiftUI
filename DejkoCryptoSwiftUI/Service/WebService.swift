@@ -9,7 +9,16 @@ import Foundation
 
 class WebService {
     
-    func downloadCurrencies(url: URL, completion: @escaping (Result<[CryptoModel]?,DownloadError>) -> Void) {
+    func downloadCurrenciesAsync(url: URL) async throws -> [CryptoModel] {
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let currencies = try JSONDecoder().decode([CryptoModel].self, from: data)
+        
+        return currencies 
+    }
+    
+   /* func downloadCurrencies(url: URL, completion: @escaping (Result<[CryptoModel]?,DownloadError>) -> Void) {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -31,12 +40,14 @@ class WebService {
                     
             }
                 completion(.success(currencies))
-                                  
+            
             }.resume()
+    }
+    */
         
     }
     
-}
+
 
 enum DownloadError : Error {
     
