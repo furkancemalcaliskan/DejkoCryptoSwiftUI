@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+@MainActor
 class CryptoListViewModel : ObservableObject {
     
     @Published var cryptoList = [CryptoViewModel]()
@@ -16,9 +18,8 @@ class CryptoListViewModel : ObservableObject {
     func downloadCryptosCountinuation(url: URL) async {
         do {
             let cryptos = try await webservice.downloadCurrenciesContinuation(url: url)
-            DispatchQueue.main.async {
-                self.cryptoList = cryptos.map(CryptoViewModel.init)
-            }
+            self.cryptoList = cryptos.map(CryptoViewModel.init)
+            
         } catch {
             print(error)
         }

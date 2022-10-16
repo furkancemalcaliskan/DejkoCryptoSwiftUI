@@ -28,7 +28,16 @@ struct MainView: View {
                     Text(crypto.price)
                         .foregroundColor(.gray).frame(maxWidth: .infinity, alignment: .leading)
                 }
-            }.navigationTitle(Text("DejkoCrypto"))
+            }.toolbar(content: {
+                Button {
+                    Task.init {
+                        await cryptoListViewModel.downloadCryptosCountinuation(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
+                    }
+                } label: {
+                    Text("Refresh")
+                }
+            })
+            .navigationTitle(Text("DejkoCrypto"))
         }.task {
             
             await cryptoListViewModel.downloadCryptosCountinuation(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
